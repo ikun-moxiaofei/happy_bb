@@ -81,7 +81,7 @@ def create_admin(username,email,password):
 
 
 def create_board():
-    board_names = ['Python语法', 'web开发', '数据分析', '测试开发', '运维开发']
+    board_names = ['快乐bb', '通知bb', '题解bb', '求助bb']
     for board_name in board_names:
         board = BoardModel(name=board_name)
         db.session.add(board)
@@ -98,7 +98,7 @@ def create_test_post():
   for x in range(98):
     title = fake.sentence()
     content = fake.paragraph(nb_sentences=10)
-    random_index = random.randint(0,4)
+    random_index = random.randint(0,3)
     board = boards[random_index]
     post = PostModel(title=title, content=content, board=board, author=author)
     db.session.add(post)
